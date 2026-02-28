@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TaskBoard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <div class="brand">       
+        <div>
+          <h1>TaskBoard</h1>
+          <p class="muted">Mini To-Do / Task Manager (LocalStorage)</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Adaugă task</h2>
+        <form id="taskForm" class="grid">
+          <label>
+            Titlu *
+            <input id="title" name="title" maxlength="80" required placeholder="Ex: Sună furnizorul" />
+          </label>
+
+          <label>
+            Prioritate
+            <select id="priority" name="priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+
+          <label>
+            Scadență
+            <input id="dueDate" name="dueDate" type="date" />
+          </label>
+
+          <button type="submit">Adaugă</button>
+        </form>
+
+        <p id="formError" class="error" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <h2>Taskuri</h2>
+          <div class="filters">
+            <input id="search" placeholder="Caută..." />
+            <select id="statusFilter">
+              <option value="all" selected>Toate</option>
+              <option value="open">Open</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+        </div>
+
+        <ul id="taskList" class="list" aria-live="polite"></ul>
+
+        <div class="footer">
+          <span id="stats" class="muted"></span>
+          <button id="clearDone" class="secondary">Șterge Done</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
