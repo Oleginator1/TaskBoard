@@ -1,6 +1,6 @@
 # TaskBoard
 
-Mini To-Do / Task Manager realizat cu HTML/CSS/JS. Include căutare, filtrare și persistență în LocalStorage.
+Mini Task Manager (To-Do) realizat cu HTML/CSS/JS, cu separare UI/logică (taskStore), persistență în LocalStorage și teste unitare.
 
 ## Tehnologii
 - HTML5, CSS3
