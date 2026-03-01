@@ -38,10 +38,15 @@ export function clearDone(tasks) {
 
 export function filterTasks(tasks, { q = "", status = "all" } = {}) {
   const query = String(q).trim().toLowerCase();
+  const st = ["all", "open", "done"].includes(status) ? status : "all";
+
   return tasks.filter(t => {
-    const matchQ = query === "" || t.title.toLowerCase().includes(query);
+    const matchQ = query === "" || String(t.title).toLowerCase().includes(query);
     const matchStatus =
-      status === "all" ? true : (status === "done" ? t.status === "done" : t.status === "open");
+      st === "all" ? true :
+      st === "done" ? t.status === "done" :
+      t.status === "open";
+
     return matchQ && matchStatus;
   });
 }

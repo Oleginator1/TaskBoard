@@ -95,3 +95,12 @@ button:active { transform: translateY(1px); }
 
 .footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
 .error { color: var(--danger); margin: 10px 0 0; min-height: 20px; }
+
+button:hover{ 
+  filter: brightness(1.06);
+}
+
+input:focus, select:focus, button:focus {
+  outline: 2px solid color-mix(in srgb, #2b57ff 60%, white);
+  outline-offset: 2px;
+}
