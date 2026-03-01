@@ -135,5 +135,9 @@ function loadTasks() {
 }
 
 function saveTasks(list) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  } catch (e) {
+    console.error("Failed to save tasks to localStorage", e);
+  }
 }
