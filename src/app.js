@@ -87,7 +87,10 @@ function render() {
     const meta = document.createElement("p");
     meta.className = "meta";
     const due = t.dueDate ? `Scadență: ${t.dueDate}` : "Fără scadență";
-    meta.textContent = `${due} • Creat: ${new Date(t.createdAt).toLocaleString()}`;
+    const created = t.createdAt ? new Date(t.createdAt) : null;
+    const createdText = created && !Number.isNaN(created.getTime()) ? created.toLocaleString() : "-";
+
+    meta.textContent = `${due} • Creat: ${createdText}`;
 
     info.appendChild(title);
     info.appendChild(meta);
